@@ -1,6 +1,4 @@
 .arduino-date-picker {
-    /* -webkit-appearance: none;
-    appearance: none; */
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -8,44 +6,23 @@
 }
   
 .arduino-chart-date-group {
-    /* -webkit-appearance: none;
-    appearance: none; */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .arduino-chart-date-group label {
-    /* -webkit-appearance: none;
-    appearance: none; */
     margin-bottom: 5px;
     font-family: Arial, sans-serif;
 }
 
 .arduino-graph-date-picker-submit-button {
-    /* -webkit-appearance: none;
-    appearance: none; */
     height: 40px;
     margin: 0 auto;
     background-color: #ffffff;
     color: #000000;
     width: 120px;
 }
-
-/* Remove Native iOS Date Picker Icon Styling
-.arduino-chart-date-group input[type="date"]::-webkit-calendar-picker-indicator {
-    background: none;
-    color: #000;
-    cursor: pointer;
-    opacity: 1;
-}*/
-
-
-/* input, button {
-    -webkit-appearance: none;
-    appearance: none;
-    margin: 0;
-} */
 
 .custom-feature-box .feature-box-info.custom-left-side-border {
     border-left: 1px solid #52504d;
