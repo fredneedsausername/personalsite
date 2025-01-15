@@ -49,6 +49,14 @@
 	<body data-plugin-scroll-spy data-plugin-options="{'target': '.wrapper-spy'}">
 
 		<div class="body">
+
+			<div id="mySidenav" class="sidenav">
+				<a href="/">Home</a>
+				<a href="/storia-progetto-arduino">Progetto Arduino</a>
+			</div>
+			<span class="openbtn-sidenav" onclick="toggleNav()">☰</span>
+
+
 			{% block body %}{% endblock %}
 			<div id="say-hello" class="container-fluid" data-spy-offset="40">
 				<div class="row">
@@ -121,6 +129,9 @@
 		<script src="{{ url_for('static', filename = 'js/demos/demo-resume.js') }}"></script>
 
 		{% block scripts %}{% endblock %}
+
+		<!-- Sidebar -->
+		<script src="{{ url_for('static', filename = 'js/sidebar.js') }}"></script>
 
 		<!-- Theme Initialization Files -->
 		<script src="{{ url_for('static', filename = 'js/theme.init.js') }}"></script>

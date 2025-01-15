@@ -3,10 +3,10 @@
     height: 100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
+    z-index: 100; /* Stay on top */
     top: 0; /* Stay at the top */
-    left: 0;
-    background-color: #111; /* Black*/
+    right: 0;
+    background-color: #FDD55C; /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
@@ -17,33 +17,48 @@
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
+    color: #14475E;
     display: block;
     transition: 0.3s;
 }
   
   /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
-    color: #f1f1f1;
+    color: #D1D7DE/*#ECF1F7*/;
 }
   
   /* Position and style the close button (top right corner) */
-.sidenav .closebtn {
+.sidenav .closebtn-sidenav {
     position: absolute;
     top: 0;
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
 }
-  
-  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-    transition: margin-left .5s;
-    padding: 20px;
+
+/* Open button in the top-right corner */
+.openbtn-sidenav {
+  position: fixed; /* Stays fixed on the screen */
+  top: 20px; /* Distance from the top of the screen */
+  right: 20px; /* Distance from the right edge of the screen */
+  background-color: #FDD55C; /* Match the sidebar background */
+  font-weight: bold;
+  color: #14475E; /* Text color */
+  border: none; /* Remove border */
+  padding: 5px 10px; /* Add padding */
+  font-size: 18px; /* Button font size */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  border-radius: 5px; /* Optional: round the corners */
+  z-index: 1000; /* Ensure it appears above other elements */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.openbtn-sidenav:hover {
+  background-color: #FDF579; /* Change background color on hover */
 }
   
   /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media (max-width: 575.98px) {
-    .sidenav { padding-top: 15px; }
+    .sidenav { padding-top: 20px; }
     .sidenav a { font-size: 18px; }
 }
