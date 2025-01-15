@@ -56,6 +56,12 @@
 .openbtn-sidenav:hover {
   background-color: #FDF579; /* Change background color on hover */
 }
+
+@media (max-width: 1199.98px) {
+  .openbtn-sidenav:hover {
+    background-color: #FDD55C;
+  }
+}
   
   /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media (max-width: 575.98px) {
