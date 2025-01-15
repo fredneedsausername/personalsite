@@ -20,6 +20,5 @@
     max-width: calc(16.6% - 10px); /* Ensures 6 images fit per row with gap */
     height: auto; /* Maintains aspect ratio */
     object-fit: cover; /* Ensures image content fits nicely */
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Optional: shadow for style */
     border-radius: 4px; /* Optional: rounded corners */
 }
