@@ -1,0 +1,25 @@
+.responsive-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.logos-image-container {
+    display: flex;
+    gap: 10px; /* Margin between images */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Ensures wrapping on smaller screens */
+    max-width: 100%; /* Prevents container from exceeding screen width */
+    padding: 10px; /* Adds padding to avoid images touching edges */
+    box-sizing: border-box; /* Includes padding in width calculations */
+}
+  
+.logos-image-container img {
+    flex: 1 1 calc(16.6% - 10px); /* 16.6% width minus gap, adjusts for wrapping */
+    max-width: calc(16.6% - 10px); /* Ensures 6 images fit per row with gap */
+    height: auto; /* Maintains aspect ratio */
+    object-fit: cover; /* Ensures image content fits nicely */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Optional: shadow for style */
+    border-radius: 4px; /* Optional: rounded corners */
+}

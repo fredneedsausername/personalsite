@@ -47,6 +47,62 @@
 
 		<div class="body">
 			{% block body %}{% endblock %}
+			<div id="say-hello" class="container-fluid" data-spy-offset="40">
+				<div class="row">
+					<div class="col-lg-6 p-0">
+						<section class="section section-no-border bg-color-primary h-100 m-0">
+							<div class="row justify-content-end m-0">
+								<div class="col-half-section col-half-section-right me-3">
+									<h1 class="text-color-dark text-uppercase font-weight-extra-bold">Contatti</h1>
+								</div>
+							</div>
+						</section>
+					</div>
+					<div class="col-lg-6 p-0">
+						<section class="section section-no-border h-100 m-0"
+							 style="background: url('{{ url_for('static', filename='img/demos/resume/contact/contact-bg-1.jpg') }}'); background-size: cover;">
+							<div class="row m-0">
+								<div class="col-half-section col-half-section-left ms-3">
+									<a href="mailto:fred.ver06@gmail.com" class="text-decoration-none">
+										<span class="feature-box custom-feature-box align-items-center mb-4">
+											<span class="custom-feature-box-icon">
+												<i class="icon-envelope icons text-color-light"></i>
+											</span>
+											<span class="feature-box-info">
+												<span class="custom-label font-weight-semibold text-uppercase custom-text-color-1 line-height-5">Email</span>
+												<strong class="font-weight-light text-color-light custom-opacity-effect-1">fred.ver06@gmail.com</strong>
+											</span>
+										</span>
+									</a>
+									<span class="feature-box custom-feature-box align-items-center">
+										<span class="custom-feature-box-icon">
+											<i class="icon-share icons text-color-light"></i>
+										</span>
+										<a href="https://github.com/fredneedsausername" class="d-flex text-decoration-none">
+											<span class="feature-box-info">
+												<span class="custom-label font-weight-semibold text-uppercase custom-text-color-1 line-height-5">Mi trovi qui</span>
+												<strong class="font-weight-light text-color-light custom-opacity-effect-1">GitHub</strong>
+											</span>
+										</a>
+										<!-- If you want to add more social networks
+										<a href="https://github.com/fredneedsausername" class="d-flex text-decoration-none">
+											<span class="feature-box-info custom-left-side-border mt-2">
+												<strong class="font-weight-light text-color-light custom-opacity-effect-1">GitHub</strong>
+											</span>
+										</a>
+										 -->
+									</span>
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+		
+			<footer id="footer" class="m-0 p-0">
+				<div class="footer-copyright bg-color-light m-0">
+				</div>
+			</footer>
 		</div>
 
 		<!-- Vendor -->
