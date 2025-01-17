@@ -24,13 +24,6 @@
     width: 120px;
 }
 
-.custom-feature-box .feature-box-info.custom-left-side-border {
-    border-left: 1px solid #52504d;
-    line-height: 1;
-    padding: 0px 16px;
-    margin: 0 13px;
-}
-
 .fred-col-lg-2, .fred-col-xl-3 {
     min-height: 0px; /* Adjust this value to match the original height */
     height: auto; /* Optional, ensures flexibility */

@@ -60,6 +60,10 @@ def index():
 def storia_progetto_arduino():
     return render_template("storia-progetto-arduino.html")
 
+@app.route("/corso-c")
+def corso_c():
+    return render_template("corso-c.html")
+
 
 @app.route("/sensor-endpoint", methods = ["POST"])
 @fredbconn.connected_to_database
