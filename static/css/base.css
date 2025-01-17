@@ -5,6 +5,9 @@
     margin: 0 13px;
 }
 
-.fred-weight-bold {
+.fred-date-and-title-container > * { margin: 0; }
+
+.fred-text-date {
+    color: #878787;
     font-weight: bold;
 }
