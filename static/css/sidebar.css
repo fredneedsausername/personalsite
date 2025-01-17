@@ -26,17 +26,7 @@
 .sidenav a:hover {
     color: #D1D7DE/*#ECF1F7*/;
 }
-  
-  /* Position and style the close button (top right corner) */
-.sidenav .closebtn-sidenav {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
 
-/* Open button in the top-right corner */
 .openbtn-sidenav {
   position: fixed; /* Stays fixed on the screen */
   top: 20px; /* Distance from the top of the screen */
@@ -45,26 +35,38 @@
   font-weight: bold;
   color: #14475E; /* Text color */
   border: none; /* Remove border */
-  padding: 5px 10px; /* Add padding */
-  font-size: 18px; /* Button font size */
+  padding: 30px 20px; /* Add padding */
   cursor: pointer; /* Change cursor to pointer on hover */
   border-radius: 5px; /* Optional: round the corners */
   z-index: 1000; /* Ensure it appears above other elements */
   transition: background-color 0.3s ease; /* Smooth hover effect */
-}
-
-.openbtn-sidenav:hover {
-  background-color: #FDF579; /* Change background color on hover */
+  font-size: 60px;
 }
 
 @media (max-width: 1199.98px) {
   .openbtn-sidenav:hover {
     background-color: #FDD55C;
   }
+
 }
   
   /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media (max-width: 575.98px) {
     .sidenav { padding-top: 20px; }
     .sidenav a { font-size: 18px; }
+    .openbtn-sidenav {
+      position: fixed; /* Stays fixed on the screen */
+      top: 20px; /* Distance from the top of the screen */
+      right: 20px; /* Distance from the right edge of the screen */
+      background-color: #FDD55C; /* Match the sidebar background */
+      font-weight: bold;
+      color: #14475E; /* Text color */
+      border: none; /* Remove border */
+      padding: 5px 10px; /* Add padding */
+      cursor: pointer; /* Change cursor to pointer on hover */
+      border-radius: 5px; /* Optional: round the corners */
+      z-index: 1000; /* Ensure it appears above other elements */
+      transition: background-color 0.3s ease; /* Smooth hover effect */
+      font-size: 18px;
+    }
 }
