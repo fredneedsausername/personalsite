@@ -234,5 +234,6 @@ def give_arduino_measurements(cursor):
 if __name__ == "__main__":
     fredbconn.initialize_database(*passwords.database_config)
     locale.setlocale(locale.LC_TIME, 'it_IT.UTF-8')
-    serve(app, host="127.0.0.1", port=42069)
+    # serve(app, host="127.0.0.1", port=42069)
+    app.run(host = "127.0.0.1", port = "5000",debug = True)
     
