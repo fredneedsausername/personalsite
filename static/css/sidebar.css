@@ -62,11 +62,11 @@
       font-weight: bold;
       color: #14475E; /* Text color */
       border: none; /* Remove border */
-      padding: 5px 10px; /* Add padding */
+      padding: 14px 10px; /* Add padding */
       cursor: pointer; /* Change cursor to pointer on hover */
       border-radius: 5px; /* Optional: round the corners */
       z-index: 1000; /* Ensure it appears above other elements */
       transition: background-color 0.3s ease; /* Smooth hover effect */
-      font-size: 18px;
+      font-size: 40px;
     }
 }
