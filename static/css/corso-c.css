@@ -50,6 +50,6 @@
         flex-direction: column; /* Stack images vertically */
         align-items: center; /* Center-align images */
         max-width: 100%;
-        height: auto;r
+        height: auto;
     }
 }
