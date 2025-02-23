@@ -5,6 +5,10 @@ from datetime import datetime
 import locale
 from waitress import serve
 import passwords
+import logging
+import sys
+import os
+import traceback
 
 
 app = Flask(__name__, template_folder = "../templates", static_folder = "../static")
@@ -234,4 +238,56 @@ def give_arduino_measurements(cursor):
 if __name__ == "__main__":
     fredbconn.initialize_database(*passwords.database_config)
     locale.setlocale(locale.LC_TIME, 'it_IT.UTF-8')
+
+    class CrashLogger:
+        def __init__(self, log_dir="/var/log/sitofred", log_filename=None):
+            """
+            Initializes the crash logger.
+            
+            :param log_dir: Directory where logs will be stored.
+            :param log_filename: Custom log file name (default: auto-generated with timestamp).
+            """
+            self.log_dir = log_dir
+            os.makedirs(self.log_dir, exist_ok=True)  # Ensure directory exists
+            
+            # Generate a log filename if not provided
+            if log_filename is None:
+                timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+                log_filename = f"error_{timestamp}.log"
+            
+            self.log_file = os.path.join(self.log_dir, log_filename)
+            
+            # Configure logging
+            logging.basicConfig(
+                filename=self.log_file,
+                level=logging.ERROR,
+                format="%(asctime)s - %(levelname)s - %(message)s",
+            )
+
+            # Set the global exception hook
+            sys.excepthook = self.log_exception
+
+        def log_exception(self, exc_type, exc_value, exc_traceback):
+            """
+            Logs uncaught exceptions.
+            """
+            if issubclass(exc_type, KeyboardInterrupt):
+                sys.__excepthook__(exc_type, exc_value, exc_traceback)
+                return
+            
+            error_message = "".join(traceback.format_exception(exc_type, exc_value, exc_traceback))
+            logging.error("Unhandled Exception:\n" + error_message)
+
+        def log_custom_error(self, message):
+            """
+            Allows manual logging of error messages.
+            """
+            logging.error(message)
+
+    # Initialize logger
+    crash_logger = CrashLogger()
+
+    # Set the crash logs custom error
+    crash_logger.log_custom_error("ERROR")
+
     serve(app, host="127.0.0.1", port=42069)
