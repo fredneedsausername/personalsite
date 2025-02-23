@@ -1,0 +1,60 @@
+/* Container styles */
+.arduino-dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Button styles */
+.arduino-dropdown-toggle {
+    background-color: #FDD55C;
+    color:  #000000;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Menu styles */
+.arduino-dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #ECF1F7;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* Menu items */
+.arduino-dropdown-menu li {
+    border-bottom: 1px solid #ddd;
+}
+
+.arduino-dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+.arduino-dropdown-menu li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: black;
+}
+
+.arduino-dropdown-menu li a:hover {
+    background-color: #ddd;
+}
+
+/* Show dropdown when active */
+.arduino-dropdown-container.active .arduino-dropdown-menu {
+    display: block;
+}
+
+.no-arduino-message {
+    background-color: #ECF1F7;
+    padding: 10px 20px;
+    color:  #000000;
+    font-size: 16px;
+}

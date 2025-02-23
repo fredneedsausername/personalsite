@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename = 'css/corso-c.css') }}">
+{% endblock %}
+
+{% block body %}
+<div role="main" class="main">
+    <section id="" class="section section-secondary section-no-border m-0">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="fred-date-and-title-container">
+                        <h3 class="fred-text-date">16 gen 2025</h3>
+                        <h1 class="text-color-dark text-uppercase font-weight-extra-bold">Corso C italiano</h1>
+                    </div>                      
+                    <div class="corso-c-playlist-video-container">
+                        <iframe 
+                            src="https://www.youtube.com/embed/videoseries?list=PLp33ryL1SvIlsIjqftf7Vcijn6x7Wlzmo&rel=0" 
+                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <br>
+                    <p>Quello sopra è il video di presentazione al mio corso di C gratuito e in italiano che trovate <a href="https://www.youtube.com/watch?v=rWbmkALcv8Y&list=PLp33ryL1SvIlsIjqftf7Vcijn6x7Wlzmo">cliccando qui</a></p>
+                    <p>In questo corso di C, come dice il video di presentazione, non si va a imparare solo il linguaggio, ma anche architettura del software e programmazione a basso livello, partendo dalle basi e approfondendo sempre di più.</p>
+                    <p>Già nelle prime lezioni si vanno ad approfondire dettagli specifici di implementazione del linguaggio, e le basi dell'architettura del software, cioè cosa sia la memoria, i byte, la rappresentazione dei numeri interi, ecc.</p>
+                    <p>Il C, come tutti i linguaggi, ha le sue particolarità, ma, in particolare, le sue creano un potenziale didattico enorme. Il C è un linguaggio a basso livello, questo permette di implementare soluzioni proprie ed efficienti a problemi già risolti, e spinge alla comprensione completa di tutte le risorse che il linguaggio ha da offrire.</p>
+                    <div class="corso-c-strutture-dati-responsive-container">
+                        <img src="{{ url_for('static', filename = 'img/binario.png') }}" alt />
+                        <img src="{{ url_for('static', filename = 'img/linkedlist.png') }}" alt />
+                    </div>
+                    <br>
+                    <p>Ho re-inventato e implementato i miei algoritmi per gli alberi binari, le linked list, e un mini database in C. Questa reinvenzione, per quanto mi sia assolutamente chiaro che non serva a niente di pratico, penso che mi abbia offerto un ottimo ritorno sull'investimento, perché mi ha formato come problem solver.</p>
+                    <p>Senza il C, la madre di tutti i linguaggi, oggi capirei peggio il Python, il JavaScript, ma in un certo senso anche l'HTML e CSS, perché non li vedrei come strumenti di programmazione ma come giocattoli.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

@@ -1,0 +1,13 @@
+.custom-feature-box .feature-box-info.custom-left-side-border {
+    border-left: 1px solid white;
+    line-height: 1;
+    padding: 0px 16px;
+    margin: 0 13px;
+}
+
+.fred-date-and-title-container > * { margin: 0; }
+
+.fred-text-date {
+    color: #878787;
+    font-weight: bold;
+}

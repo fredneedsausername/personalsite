@@ -1,0 +1,178 @@
+{% extends "base.html" %}
+
+{% block css %}
+<!-- Other CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename = 'css/other.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename = 'css/dropdown-arduino-chart.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename = 'css/corso-c.css') }}">
+{% endblock %}
+
+{% block scripts %}
+<!-- Chart.js library -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Other -->
+<script src="{{ url_for('static', filename = 'js/other.js') }}"></script>
+<script src="{{ url_for('static', filename = 'js/dropdown-arduino-chart.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+<div role="main" class="main">
+
+    <div id="about-me">
+        <section class="section section-no-border section-parallax bg-transparent custom-section-padding-1 custom-position-1 custom-xs-bg-size-cover parallax-no-overflow m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5}" data-image-src="{{ url_for('static', filename = 'img/demos/resume/about-me/about-me-bg-1.jpg') }}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 position-relative custom-sm-margin-bottom-1">
+                        <img src="{{ url_for('static', filename = 'img/demos/resume/about-me/me.jpg') }}" class="img-fluid custom-border custom-image-position-2 custom-box-shadow-4" alt />
+                    </div>
+                    <div class="col-lg-6 col-xl-5">
+                        
+                        <h1 class="text-color-fred-name custom-font-size-1">Federico Veronesi</h1>
+                        <p class="text-color-studente-presso font-weight-normal custom-font-size-2 custom-margin-bottom-1">Studente presso IIS Galileo Galilei <!-- Studente presso Università di Pisa, Dipartimento di Informatica--></p>
+                        <span class="custom-about-me-infos">
+                            <span class="custom-text-color-2 text-uppercase">Viareggio (LU) <!-- Viareggio / Pisa --></span>
+                        </span>
+                    </div>
+                    <div class="fred-col-lg-2 fred-col-xl-3 fred-d-none fred-d-lg-block"></div>								
+                </div>
+            </div>
+        </section>
+    </div>
+    <br><br><br>
+    <!-- <section id="experience" class="section section-secondary section-no-border m-0">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h2 class="text-color-dark text-uppercase font-weight-extra-bold">Cronologia Professionale</h2>
+                    <section class="timeline custom-timeline" id="timeline">
+                        <div class="timeline-body">
+                            <article class="timeline-box right custom-box-shadow-2">
+                                <div class="row">
+                                    <div class="experience-info col-lg-3 col-sm-5 bg-color-primary">
+                                        <span class="from text-color-dark text-uppercase">
+                                            Inizio
+                                            <span class="font-weight-semibold">???</span>
+                                        </span>
+                                        <span class="to text-color-dark text-uppercase">
+                                            Fine
+                                            <span class="font-weight-semibold">???</span>
+                                        </span>
+                                        <p></p>
+                                        <span class="company text-color-dark font-weight-semibold">
+                                            Università
+                                            <span class="company-location text-color-dark font-weight-normal text-uppercase">Pisa</span>
+                                        </span>
+                                    </div>
+                                    <div class="experience-description col-lg-9 col-sm-7 bg-color-light">
+                                        <h4 class="text-color-dark font-weight-semibold">Dipartimento di informatica</h4>
+                                        <p class="custom-text-color-2">Sono già certo della mia scelta universitaria e non vedo l'ora di immatricolarmi.<br>
+                                            Ho passione per la materia, e passo la maggior parte del mio tempo libero a studiarla e applicarla.
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="timeline-box right custom-box-shadow-2">
+                                <div class="row">
+                                    <div class="experience-info col-lg-3 col-sm-5 bg-color-primary">
+                                        <span class="from text-color-dark text-uppercase">
+                                            Inzio
+                                            <span class="font-weight-semibold">Set 2020</span>
+                                        </span>
+                                        <span class="to text-color-dark text-uppercase">
+                                            Fine
+                                            <span class="font-weight-semibold">Presente</span>
+                                        </span>
+                                        <p></p>
+                                        <span class="company text-color-dark font-weight-semibold">
+                                            Liceo scientifico
+                                            <span class="company-location text-color-dark font-weight-normal text-uppercase">Viareggio</span>
+                                        </span>
+                                    </div>
+                                    <div class="experience-description col-lg-9 col-sm-7 bg-color-light">
+                                        <h4 class="text-color-dark font-weight-semibold">IIS Galileo Galilei - Artiglio - Scientifico delle scienze applicate</h4>
+                                        <p class="custom-text-color-2">
+                                             <ul>
+                                                <li>Progetto Arduino</li>
+                                                <li>Progetto Sito web</li>
+                                                <li>Progetti minori in Java e C</li>
+                                             </ul>
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                            <div class="timeline-bar"></div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <section id="" class="section section-secondary section-no-border m-0">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1 class="text-color-dark text-uppercase font-weight-extra-bold">Progetto Arduino</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p>Quello che segue è un grafico dello storico delle misure di umidità relativa e temperatura dei miei due terrazzi. Questo si tratta del progetto Arduino, che ha consistito nel programmare e installare i sensori, per poi costruire un grafico interattivo sul mio sito per vederne le misurazioni.</p>
+                    <p>Per maggiori informazioni <a href="/storia-progetto-arduino">clicca qui</a>. <p>
+                    <!-- Arduino sensor dropdown picker -->
+                    <nav class="arduino-dropdown-container">
+                        <button class="arduino-dropdown-toggle">Seleziona Sensore</button>
+                        <ul class="arduino-dropdown-menu">
+                            <!-- <li><a href="javascript:void(0);">Arduino 1</a></li> -->
+                            <!-- JavaScript will populate the list -->
+                        </ul>
+                    </nav>
+                    <!-- Arduino sensor dropdown picker -->
+                    <!-- Arduino Graph -->
+                    <div class = "arduino-chart-div">
+                        <canvas id="ArduinoChart" style="background-color: #ffffff;"></canvas>                                      
+                    </div>
+                    <!-- End Arduino Graph -->
+                    <!-- Arduino date picker -->
+                    <form onsubmit="handleAruinoDatePickerFormSubmission(event)" method="POST" class="arduino-date-picker" id="arduino-graph-date-picker">
+                        <input type="hidden" name="form_id" value="submit-arduino-graph-dates"/>
+                        <div class="arduino-date-pickers-container">
+                            <div class="arduino-chart-date-group">
+                                <label for="arduino-graph-start-date">Inizio</label>
+                                <input type="date" id="arduino-graph-start-date" name="start_date"/>
+                            </div>
+                            <div class="arduino-chart-date-group">
+                                <label for="arduino-graph-end-date">Fine</label>
+                                <input type="date" id="arduino-graph-end-date" name="end_date"/>
+                            </div>
+                        </div>
+                        <div class="arduino-graph-date-picker-submit-button-container">
+                            <button type="submit" class="arduino-graph-date-picker-submit-button">Osserva</button>
+                        </div>
+                    </form>
+                    <!-- End Arduino date picker -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="" class="section section-secondary section-no-border m-0">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1 class="text-color-dark text-uppercase font-weight-extra-bold">Corso C italiano</h1>                     
+                    <div class="corso-c-playlist-video-container">
+                        <iframe 
+                            src="https://www.youtube.com/embed/videoseries?list=PLp33ryL1SvIlsIjqftf7Vcijn6x7Wlzmo&rel=0" 
+                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <br>
+                    <p>Quello sopra è il video di presentazione al mio corso di C gratuito e in italiano. La pagina dove ne parlo <a href="/corso-c">si trova qui</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

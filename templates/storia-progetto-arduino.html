@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename = 'css/storia-progetto-arduino.css') }}">
+{% endblock %}
+
+{% block body %}
+<div role="main" class="main">
+    <section id="" class="section section-secondary section-no-border m-0">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="fred-date-and-title-container">
+                        <h3 class="fred-text-date">9 dic 2024</h3>
+                        <h1 class="text-color-dark text-uppercase font-weight-extra-bold">Realizzazione del progetto Arduino</h1>
+                    </div>   
+                    <img src="{{ url_for('static', filename = 'img/foto-arduino-terrazzo-est.jpg') }}" class="responsive-image" alt />
+                    <p>Ho posizionato due microcontrollori Arduino Nano IoT 33 nei due terrazzi della mia casa, e li ho collegati a sensori di temperatura e umidità relativa, e le misure, raccolte periodicamente, vengono inviate al sito, dove vengono visualizzate con grafici interattivi.</p>
+                    <p>Questo progetto nasce dalla mia volontà di fare qualcosa di applicato che coprisse più aspetti possibile della programmazione, quali: embedded, full stack, e sistemistica.</p>
+                    <p>Per chi fosse interessato a vedere il codice sorgente, rimando alle mie due pagine GitHub, quella <a href="https://github.com/fredneedsausername/personalsite">dedicata al sito</a> e quella <a href="https://github.com/fredneedsausername/arduinosensor">dedicata alla programmazione dell'arduino</a>, altrimenti per la spiegazione di come sia stato realizzato il progetto continuate pure la lettura.</p>
+                    <br>
+                    <div class="logos-image-container">
+                        <img src="{{ url_for('static', filename = 'img/logos/c++.png') }}" alt />
+                        <img src="{{ url_for('static', filename = 'img/logos/python.png') }}" alt />
+                        <img src="{{ url_for('static', filename = 'img/logos/javascript.png') }}" alt />
+                        <img src="{{ url_for('static', filename = 'img/logos/html.png') }}" alt />
+                        <img src="{{ url_for('static', filename = 'img/logos/css.png') }}" alt />
+                        <img src="{{ url_for('static', filename = 'img/logos/bash.png') }}" alt />
+                    </div>
+                    <p><h3 class="text-color-dark text-uppercase font-weight-extra-bold">Linguaggi di programmazione utilizzati</h3>
+                        <ul>
+                            <li><strong>C++</strong>: ho usato il linguaggio per scrivere il codice che comanda i microcontrollori per prendere le misure a intervalli regolari, e spedirle al sito. Il codice è eccezionalmente robusto, con copertura da unit test del 100%, ed è progettato per rivelare se la connessione si sia interrotta, per, in automatico, riconnettersi. Le librerie open source che ho utilizzato sono molto poco documentate, quindi ho dovuto produrre io la mia documentazione, partendo dal codice sorgente delle stesse.</li>
+                            <br>
+                            <li><strong>Python</strong>: questo non può essere un sito tradizionale, ma deve essere una web application, perché necessita di una API per accettare le misure prese dall'Arduino, e per comunicare le misure prese al JavaScript che lavora nel frontend per disegnare il grafico. Quindi l'ho scritta in Python usando il framework Flask, con il server di Waitress facente uso di un reverse proxy. Per la connessione al database ho scritto una mini-libreria, e l'ho chiamata "fredbconn", della quale mi sono avvalso per connettermi al server MySQL. La libreria ottimizza le connessioni con un pool, tenendone alcune sempre attive e pronte per prestarsi a una qualunque richiesta al sito.</li>
+                            <br>
+                            <li><strong>JavaScript</strong>: è un linguaggio particolare, e programmare in JavaScript da una parte dà la sensazione di programmare con la fusione di Python per la dinamicità e C per la sintassi, ma dall'altra è piena di particolarità nascoste che altri linguaggi non hanno. La fetch api e await-async sono un modo pratico di usare la programmazione parallela, che in altri linguaggi semplicemente non mi sono mai trovato a usare, perché sempre astratta da librerie e framework; ad esempio in Python con il framework Flask, ma, anche in Java, raramente si usano i CompletableFuture o i Thread direttamente, spesso nascosti da servizi come TomCat.</li>
+                            <br>
+                            <li><strong>HTML & CSS</strong>: non avrei mai detto, prima di questo progetto, che dei linguaggi di programmazione sarebbero potuti essere così potenti nel disegnare delle interfaccie utente e dei siti web. È molto facile esercitare controllo preciso sulla forma, posizione, colore di ogni componente sullo schermo, e il tutto senza toccare una matita, un pennello, ma solo toccando tasti sul computer, modificando tag, classi, attributi.</li>
+                            <br>
+                            <li><strong>Bash</strong>: è un utile linguaggio di scripting che ho usato per impostare dei servizi di systemd e cron jobs sul VPS (virtual private server) Linux dove il sito è hostato, automatizzando alcuni processi fra cui quello di riavviare il sito nel caso in cui il server si riavvii, o eliminare i log di accesso vecchi. È stato quindi principalmente utile per piccoli lavori di automatizzazione sull'ambiente Linux in cui mi sono ritrovato a lavorare.</li>
+                            <br>
+                        </ul>
+                    </p>
+                    <h3 class="text-color-dark text-uppercase font-weight-extra-bold">Come gira il sito?</h3>
+                    <p>Ho comprato un dominio e l'ho diretto a un VPS, dove è impostato un reverse proxy, Nginx, che è in ascolto per tutte le connessioni, e le rimanda alla web application. Nginx è necessario per far il funzionamento di certbot, il bot di Let's Encrypt™, che periodicamente controlla se il certificato SSL, che garantisce la protezione delle connessioni al sito sia scaduto, e in tal caso lo rinnova.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

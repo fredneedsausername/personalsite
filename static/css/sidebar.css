@@ -1,0 +1,72 @@
+/* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Stay on top */
+    top: 0; /* Stay at the top */
+    right: 0;
+    background-color: #FDD55C; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+  
+  /* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #14475E;
+    display: block;
+    transition: 0.3s;
+}
+  
+  /* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: #D1D7DE/*#ECF1F7*/;
+}
+
+.openbtn-sidenav {
+  position: fixed; /* Stays fixed on the screen */
+  top: 20px; /* Distance from the top of the screen */
+  right: 20px; /* Distance from the right edge of the screen */
+  background-color: #FDD55C; /* Match the sidebar background */
+  font-weight: bold;
+  color: #14475E; /* Text color */
+  border: none; /* Remove border */
+  padding: 30px 20px; /* Add padding */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  border-radius: 5px; /* Optional: round the corners */
+  z-index: 1000; /* Ensure it appears above other elements */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+  font-size: 60px;
+}
+
+@media (max-width: 1199.98px) {
+  .openbtn-sidenav:hover {
+    background-color: #FDD55C;
+  }
+
+}
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media (max-width: 575.98px) {
+    .sidenav { padding-top: 20px; }
+    .sidenav a { font-size: 18px; }
+    .openbtn-sidenav {
+      position: fixed; /* Stays fixed on the screen */
+      top: 20px; /* Distance from the top of the screen */
+      right: 20px; /* Distance from the right edge of the screen */
+      background-color: #FDD55C; /* Match the sidebar background */
+      font-weight: bold;
+      color: #14475E; /* Text color */
+      border: none; /* Remove border */
+      padding: 14px 10px; /* Add padding */
+      cursor: pointer; /* Change cursor to pointer on hover */
+      border-radius: 5px; /* Optional: round the corners */
+      z-index: 1000; /* Ensure it appears above other elements */
+      transition: background-color 0.3s ease; /* Smooth hover effect */
+      font-size: 40px;
+    }
+}
