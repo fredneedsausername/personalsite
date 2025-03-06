@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename = 'css/acca.css') }}">
+{% endblock %}
+
+{% block body %}
+<div role="main" class="main">
+    <section id="" class="section section-secondary section-no-border m-0">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="fred-date-and-title-container">
+                        <h3 class="fred-text-date">6 mar 2025</h3>
+                        <h1 class="text-color-dark text-uppercase font-weight-extra-bold">Progetto ACCA</h1>
+                    </div>   
+                    <!-- <img src="{{ url_for('static', filename = 'img/foto-arduino-terrazzo-est.jpg') }}" class="responsive-image" alt /> -->
+                    <p>Mi è stata commissionata la realizzazione di un gestionale per la gestione di accesso ai cantieri per un'azienda locale di subappaltazione operai.<p>
+                    <p>Un video di presentazione è disponibile a <a href="INSERIRE LINK QUI">questo link</a>.</p>
+                    <p>Il nome ACCA è una crasi di "accesso" e "cantieri".<p>
+                    <p>L'azienda conta circa 3900 dipendenti in circa 650 aziende supappaltate.</p>
+                    <p>L'azienda è all'avanguardia, e mi ha permesso di pubblicare tutto il codice con una licenza open source BSD 2 clause</p>
+                    <br>
+                    <h3 class="text-color-dark text-uppercase font-weight-extra-bold">Dettagli tecnici</h3>
+                    <p>La web application gira su un server locale dell'azienda, in una rete protetta da firewall. È stato implementato un sistema di autenticazione su più livelli.</p>
+                    <p>Come mostrato nel video di presentazione, è possibile modificare, aggiungere, ed eliminare aziende e dipendenti.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
