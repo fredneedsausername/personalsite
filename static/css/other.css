@@ -127,3 +127,9 @@
 .text-color-studente-presso {
     color: #878787;
 }
+
+.responsive-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
