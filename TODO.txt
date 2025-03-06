@@ -1,6 +1,3 @@
-- Crea pagina ACCA
-- Crea sezione ACCA nella landing page
-- Aggiungi pagina ACCA a sidebar
 - Mettere link video presentazione su youtube
 - linkare video presentazione sulla pagina acca
 - registra video presentazione formalmente
