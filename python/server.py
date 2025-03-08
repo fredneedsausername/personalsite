@@ -303,6 +303,10 @@ if __name__ == "__main__":
     @app.route("/acca")
     def acca():
         return render_template("acca.html")
+    
+    @app.route("/lezioni-c-con-leandro")
+    def lezioni_c_con_leandro():
+        return render_template("lezioni-c-con-leandro.html")
 
     # serve(app, host="127.0.0.1", port=42069)
     app.run(host = "127.0.0.1", port = 5000, debug = True)

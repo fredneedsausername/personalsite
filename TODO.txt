@@ -1,3 +1,4 @@
 - Mettere link video presentazione su youtube
 - linkare video presentazione sulla pagina acca
-- registra video presentazione formalmente
+- crea pagina presentazione lezioni con leandro
+- aggiungi sezione presentazione lezioni con leandre nella homepage
