@@ -2,6 +2,7 @@
 
 {% block css %}
 <link rel="stylesheet" href="{{ url_for('static', filename = 'css/acca.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename = 'css/corso-c.css') }}">
 {% endblock %}
 
 {% block body %}
@@ -14,10 +15,15 @@
                         <h3 class="fred-text-date">6 mar 2025</h3>
                         <h1 class="text-color-dark text-uppercase font-weight-extra-bold">Progetto ACCA</h1>
                     </div>   
-                    <img src="{{ url_for('static', filename = 'img/screen-dipendente.png') }}" class="responsive-image" alt />
-                    <img src="{{ url_for('static', filename = 'img/screen-crea-dipendente.png') }}" class="responsive-image" alt />
+                    <div class="yt-video-container">
+                        <iframe 
+                            src="https://www.youtube.com/embed/videoseries?list=PLp33ryL1SvIlsIjqftf7Vcijn6x7Wlzmo&rel=0" 
+                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <br>
                     <p>Mi è stata commissionata la realizzazione di un gestionale per la gestione di accesso ai cantieri per un'azienda locale di subappaltazione operai.<p>
-                    <p>Un video di presentazione è disponibile a <a href="INSERIRE LINK QUI">questo link</a>.</p>
                     <p>Il nome ACCA è una crasi di "accesso" e "cantieri".<p>
                     <p>L'azienda conta circa 3900 dipendenti in circa 650 aziende subappaltate.</p>
                     <p>L'azienda è all'avanguardia, e mi ha permesso di pubblicare tutto il codice con una licenza open source BSD 2 clause</p>

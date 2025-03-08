@@ -1,4 +1,4 @@
-.corso-c-playlist-video-container {
+.yt-video-container {
     position: relative;
     width: 100%;
     padding-bottom: 56.25%; /* Aspect ratio 16:9 */
@@ -6,7 +6,7 @@
     overflow: hidden;
 }
 
-.corso-c-playlist-video-container iframe {
+.yt-video-container iframe {
     position: absolute;
     top: 0;
     left: 0;
