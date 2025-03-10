@@ -2,6 +2,16 @@
 
 {% block css %}
 <link rel="stylesheet" href="{{ url_for('static', filename = 'css/storia-progetto-arduino.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename = 'css/dropdown-arduino-chart.css') }}">
+{% endblock %}
+
+{% block scripts %}
+<!-- Chart.js library -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Other -->
+<script src="{{ url_for('static', filename = 'js/other.js') }}"></script>
+<script src="{{ url_for('static', filename = 'js/dropdown-arduino-chart.js') }}"></script>
 {% endblock %}
 
 {% block body %}
@@ -12,12 +22,45 @@
                 <div class="col">
                     <div class="fred-date-and-title-container">
                         <h3 class="fred-text-date">9 dic 2024</h3>
-                        <h1 class="text-color-dark text-uppercase font-weight-extra-bold">Realizzazione del progetto Arduino</h1>
-                    </div>   
+                        <h1 class="text-color-dark text-uppercase font-weight-extra-bold">Progetto Arduino</h1>
+                    </div>
                     <img src="{{ url_for('static', filename = 'img/foto-arduino-terrazzo-est.jpg') }}" class="responsive-image" alt />
-                    <p>Ho posizionato due microcontrollori Arduino Nano IoT 33 nei due terrazzi della mia casa, e li ho collegati a sensori di temperatura e umidità relativa, e le misure, raccolte periodicamente, vengono inviate al sito, dove vengono visualizzate con grafici interattivi.</p>
+                    <p>Ho posizionato due microcontrollori Arduino Nano IoT 33 nei due terrazzi della mia casa, e li ho collegati a sensori di temperatura e umidità relativa, e le misure, raccolte periodicamente, vengono inviate al sito, dove vengono visualizzate con un grafico interattivo.</p>
+                    <p>Di seguito si trova il grafico</p>
+                    <!-- Arduino sensor dropdown picker -->
+                    <nav class="arduino-dropdown-container">
+                        <button class="arduino-dropdown-toggle">Seleziona Sensore</button>
+                        <ul class="arduino-dropdown-menu">
+                            <!-- <li><a href="javascript:void(0);">Arduino 1</a></li> -->
+                            <!-- JavaScript will populate the list -->
+                        </ul>
+                    </nav>
+                    <!-- Arduino sensor dropdown picker -->
+                    <!-- Arduino Graph -->
+                    <div class = "arduino-chart-div">
+                        <canvas id="ArduinoChart" style="background-color: #ffffff;"></canvas>                                      
+                    </div>
+                    <!-- End Arduino Graph -->
+                    <!-- Arduino date picker -->
+                    <form onsubmit="handleAruinoDatePickerFormSubmission(event)" method="POST" class="arduino-date-picker" id="arduino-graph-date-picker">
+                        <input type="hidden" name="form_id" value="submit-arduino-graph-dates"/>
+                        <div class="arduino-date-pickers-container">
+                            <div class="arduino-chart-date-group">
+                                <label for="arduino-graph-start-date">Inizio</label>
+                                <input type="date" id="arduino-graph-start-date" name="start_date"/>
+                            </div>
+                            <div class="arduino-chart-date-group">
+                                <label for="arduino-graph-end-date">Fine</label>
+                                <input type="date" id="arduino-graph-end-date" name="end_date"/>
+                            </div>
+                        </div>
+                        <div class="arduino-graph-date-picker-submit-button-container">
+                            <button type="submit" class="arduino-graph-date-picker-submit-button">Osserva</button>
+                        </div>
+                    </form>
+                    <!-- End Arduino date picker -->
                     <p>Questo progetto nasce dalla mia volontà di fare qualcosa di applicato che coprisse più aspetti possibile della programmazione, quali: embedded, full stack, e sistemistica.</p>
-                    <p>Per chi fosse interessato a vedere il codice sorgente, rimando alle mie due pagine GitHub, quella <a href="https://github.com/fredneedsausername/personalsite">dedicata al sito</a> e quella <a href="https://github.com/fredneedsausername/arduinosensor">dedicata alla programmazione dell'arduino</a>, altrimenti per la spiegazione di come sia stato realizzato il progetto continuate pure la lettura.</p>
+                    <p>Per chi fosse interessato a saperne di più, rimando al mio video youtube:</p>
                     <br>
                     <div class="logos-image-container">
                         <img src="{{ url_for('static', filename = 'img/logos/c++.png') }}" alt />
